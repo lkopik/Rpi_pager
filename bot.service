@@ -1,0 +1,13 @@
+[Unit]
+Description=My Start Script Service
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi
+ExecStart=/bin/bash /home/pi/start.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
