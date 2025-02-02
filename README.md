@@ -7,7 +7,7 @@
 
 # install 
 
-pip install requirements.txt (bla-bla-bla)
+pip install -r requirements.txt (bla-bla-bla)
 
 # how to use
 
