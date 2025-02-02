@@ -22,12 +22,12 @@ font17 = ImageFont.truetype("Roboto-Regular.ttf", 17, encoding='UTF-8')
 font14 = ImageFont.truetype("Roboto-Regular.ttf", 14, encoding='UTF-8')
 
 # Настройка бота
-BOT_TOKEN = "7620403422:AAHHZO5zq4qV5azEYmWWeoUtCD3sEik4rsc"
+BOT_TOKEN = "ВАШ_ТОКЕН"
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
 
 # Глобальные переменные
-max_length = 10  # Максимальная длина строки
+max_length = 19  # Максимальная длина строки
 last_message = None
 
 # Функция для разбиения текста на строки
@@ -52,7 +52,7 @@ def split_text(text, max_length):
 
     return lines  # Возвращаем список строк
 
-# Обработчик команды /start
+# /start
 @dp.message(Command("start"))
 async def handle_start(message: Message):
     await message.answer("Привет! Отправь мне сообщение, и я его выведу на экран.")
@@ -64,7 +64,7 @@ async def handle_message(message: Message):
     try:
         last_message = message.text
 
-        # Запись в файл (относительный путь)
+        # Запись в файл 
         with open("save.txt", "w", encoding="utf-8") as file:
             file.write(last_message)
             print(last_message, message.from_user.full_name)
